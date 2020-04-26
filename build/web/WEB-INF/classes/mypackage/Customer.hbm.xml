@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 21 Mar, 2020 9:43:38 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="mypackage.Customer" table="customer" catalog="bank" optimistic-lock="version">
+        <id name="username" type="string">
+            <column name="username" length="50" />
+            <generator class="assigned" />
+        </id>
+        <property name="password" type="string">
+            <column name="password" length="50" not-null="true" />
+        </property>
+        <property name="accNumber" type="int">
+            <column name="acc_number" not-null="true" />
+        </property>
+        <property name="balance" type="float">
+            <column name="balance" precision="12" scale="0" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
